@@ -1,4 +1,4 @@
-# Vehicle Steering Script :racing_car:
+# Vehicle Steering Script for PiRacer Standard :racing_car:
 
 This Python script allows to control the steering and movement of a vehicle from the command line. It provides various actions such as starting, stopping, turning, and driving forward/backward.
 
@@ -55,8 +55,15 @@ python3 steer.py turn_left --value 50
 python3 steer.py drive_forward --value 40
 ```
 
+## Tested Enviroment
+
+This script has been tested on the following environment:
+- RPi: **Raspberry Pi 4 Model B Rev 1.1**
+- OS: **Ubuntu 20.04.5 LTS**
+- Kernel: **5.4.0-1069-raspi**
+
 ## Useful Links
 
 Here are some useful links for further information on vehicle steering and PWM control:
-- [Named Link](https://learn.adafruit.com/adafruit-16-channel-pwm-slash-servo-shield/circuitpython-usage "Adafruit PCA9685 PWM/Servo Shield Usage")
-- [Named Link](https://www.learnrobotics.org/blog/raspberry-pi-servo-motor/ "Useful Tips for Servo Motor Control with Raspberry Pi")
+- [Adafruit **PCA9685** PWM/Servo Shield Usage](https://learn.adafruit.com/adafruit-16-channel-pwm-slash-servo-shield/circuitpython-usage)
+- [Useful Tips for Servo Motor **MG996R** Control with Raspberry Pi](https://www.learnrobotics.org/blog/raspberry-pi-servo-motor/)
