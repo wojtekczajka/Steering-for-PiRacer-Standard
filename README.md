@@ -15,7 +15,14 @@ source venv/bin/activate
 ```bash
 pip3 install -r requirements.txt
 ```
-5. Run the script (look at provided examples)
+5. Calibrate steering
+6. Run the script (look at provided examples)
+
+## Calibration
+
+If the vehicle's wheels are not centered after running the ```python3 steer.py start``` command, you need to adjust the configuration in config.py. Modify the parameters **MAX_RIGHT_PWM_RAW**, **MAX_LEFT_PWM_RAW**, and **NEUTRAL_PWM_RAW** to match requirements.
+
+:information_source: If you don't know much about PWM control, take a look at the links section, they will be helpful for calibration if you are doing it for the first time
 
 ## Usage
 
@@ -47,3 +54,9 @@ python3 steer.py turn_left --value 50
 ```bash
 python3 steer.py drive_forward --value 40
 ```
+
+## Useful Links
+
+Here are some useful links for further information on vehicle steering and PWM control:
+- [Named Link](https://learn.adafruit.com/adafruit-16-channel-pwm-slash-servo-shield/circuitpython-usage "Adafruit PCA9685 PWM/Servo Shield Usage")
+- [Named Link](https://www.learnrobotics.org/blog/raspberry-pi-servo-motor/ "Useful Tips for Servo Motor Control with Raspberry Pi")
