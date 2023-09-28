@@ -49,7 +49,7 @@ def set_pwm_duty_cycle_for_motors(pwm_duty_cycle: int):
 
 def validate_pwm_cycle_duty_for_motors(pwm_cycle_duty: int):
     if not (vehicle_config.PWM_MIN_RAW_VALUE <= pwm_cycle_duty <= vehicle_config.PWM_MAX_RAW_VALUE):
-        raise ValueError(f"PWM RAW CYCLE DUTY value for steering should be between {vehicle_config.MAX_LEFT_PWM_RAW} and {vehicle_config.MAX_RIGHT_PWM_RAW}.")
+        raise ValueError(f"PWM RAW CYCLE DUTY value for motors should be between {vehicle_config.MAX_LEFT_PWM_RAW} and {vehicle_config.MAX_RIGHT_PWM_RAW}.")
     
 def set_pwm_duty_cycle_on_controller_channel(controller: PCA9685, channel: int, pwm_duty_cycle: int):
     controller.channels[channel].duty_cycle = pwm_duty_cycle
