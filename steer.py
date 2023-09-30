@@ -7,8 +7,11 @@ def main():
     parser.add_argument("action", choices=["start", "stop", "turn_left", "turn_right", "center", "drive_forward", "drive_backward"],
                         help="Action to perform")
     parser.add_argument("--value", type=int, help="Value for turning or driving (0 to 100)")
-
     args = parser.parse_args()
+
+    if args.value is not None and not (0 <= args.value <= 100):
+        raise ValueError("Value must be in the range 0 to 100")
+    
     if args.action == "start":
         vehicle_steering.start_vehicle()
     elif args.action == "stop":
