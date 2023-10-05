@@ -28,6 +28,16 @@ def drive_forward(speed_value: int):
     vehicle_control.set_throttle_direction_forward()
     vehicle_control.set_pwm_duty_cycle_for_motors(raw_pwm_cycle_duty)
 
+def set_speed_for_right_motor(speed_value: int):
+    raw_pwm_cycle_duty = common.map_value(speed_value, 0, 100, vehicle_config.PWM_MIN_RAW_VALUE, vehicle_config.PWM_MAX_RAW_VALUE)
+    # vehicle_control.set_throttle_direction_forward()
+    vehicle_control.set_pwm_duty_cycle_for_right_motor(raw_pwm_cycle_duty)
+
+def set_speed_for_left_motor(speed_value: int):
+    raw_pwm_cycle_duty = common.map_value(speed_value, 0, 100, vehicle_config.PWM_MIN_RAW_VALUE, vehicle_config.PWM_MAX_RAW_VALUE)
+    # vehicle_control.set_throttle_direction_forward()
+    vehicle_control.set_pwm_duty_cycle_for_left_motor(raw_pwm_cycle_duty)
+
 # speed_value (int): speed value to driving backward min to max (0 to 100)
 def drive_backward(speed_value: int):
     raw_pwm_cycle_duty = common.map_value(speed_value, 0, 100, vehicle_config.PWM_MIN_RAW_VALUE, vehicle_config.PWM_MAX_RAW_VALUE)
