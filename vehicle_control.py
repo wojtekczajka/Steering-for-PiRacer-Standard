@@ -48,10 +48,12 @@ def set_pwm_duty_cycle_for_motors(pwm_duty_cycle: int):
     set_pwm_duty_cycle_on_controller_channel(throttle_pwm_controller, vehicle_config.PWM_THROTTLE_CHANNEL_RIGHT_MOTOR_PWM, pwm_duty_cycle)
 
 def set_pwm_duty_cycle_for_left_motor(pwm_duty_cycle: int):
+    set_throttle_direction_forward()
     validate_pwm_cycle_duty_for_motors(pwm_duty_cycle)
     set_pwm_duty_cycle_on_controller_channel(throttle_pwm_controller, vehicle_config.PWM_THROTTLE_CHANNEL_LEFT_MOTOR_PWM, pwm_duty_cycle)
 
 def set_pwm_duty_cycle_for_right_motor(pwm_duty_cycle: int):
+    set_throttle_direction_forward()
     validate_pwm_cycle_duty_for_motors(pwm_duty_cycle)
     set_pwm_duty_cycle_on_controller_channel(throttle_pwm_controller, vehicle_config.PWM_THROTTLE_CHANNEL_RIGHT_MOTOR_PWM, pwm_duty_cycle)
 
