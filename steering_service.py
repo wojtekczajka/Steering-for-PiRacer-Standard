@@ -1,8 +1,12 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
+
+from ultrasonic_hcsr04 import DistanceSensor
 import vehicle_steering
 
 app = FastAPI()
+
+distance_sensor = DistanceSensor()
 
 class Action(BaseModel):
     action: str
@@ -27,6 +31,7 @@ async def control_vehicle(action_data: Action):
     elif action == "center":
         vehicle_steering.center_steering()
     elif action == "drive_forward" and value is not None:
+        # vehicle_steering.set_speed_for_left_motor(value)
         vehicle_steering.drive_forward(value)
     elif action == "drive_backward" and value is not None:
         vehicle_steering.drive_backward(value)
@@ -38,3 +43,8 @@ async def control_vehicle(action_data: Action):
         raise HTTPException(status_code=400, detail="Invalid action or missing value")
 
     return {"message": "Action performed successfully"}
+
+@app.get("/get_distance/")
+async def get_distance():
+    distance = distance_sensor.measure_distance()
+    return {"distance": distance}
